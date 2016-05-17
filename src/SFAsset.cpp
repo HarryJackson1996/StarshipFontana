@@ -7,18 +7,48 @@ SFAsset::SFAsset(SFASSETTYPE type, std::shared_ptr<SFWindow> window): type(type)
 
   switch (type) {
   case SFASSET_PLAYER:
-    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/player.png");
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/SpriteHuman.png");
     break;
+
   case SFASSET_PROJECTILE:
     sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/projectile.png");
     break;
+
+case SFASSET_PROJECTILE2:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/projectile2.png");
+    break;
+
   case SFASSET_ALIEN:
     sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/alien.png");
     break;
-  case SFASSET_COIN:
-    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/coin.png");
+ 
+  case SFASSET_WALL:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/Wall.png");
     break;
+
+  case SFASSET_WALL2:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/Wall.png");
+    break;
+
+  case SFASSET_BOMB:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/deadcoin.png");
+    break;
+
+  case SFASSET_BIGCOIN:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/5coin.png");
+    break;
+
+  case SFASSET_SMALLCOIN:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/20coin.png");
+    break;
+
+  case SFASSET_ALIENBOSS:
+    sprite = IMG_LoadTexture(sf_window->getRenderer(), "assets/boss1.png");
+    break;
+
   }
+  
+
 
   if(!sprite) {
     cerr << "Could not load asset of type " << type << endl;
@@ -113,10 +143,41 @@ void SFAsset::GoEast() {
 }
 
 void SFAsset::GoNorth() {
-  Vector2 c = *(bbox->centre) + Vector2(0.0f, 1.0f);
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, 5.0f);
   bbox->centre.reset();
   bbox->centre = make_shared<Vector2>(c);
 }
+
+void SFAsset::GoNorthCoin() {
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, 0.75f);
+  bbox->centre.reset();
+  bbox->centre = make_shared<Vector2>(c);
+}
+
+void SFAsset::GoSouth() {
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, -5.0f);
+  bbox->centre.reset();
+  bbox->centre = make_shared<Vector2>(c);
+}
+
+void SFAsset::GoSouthAlien() {
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, -0.15f);
+    bbox->centre.reset();
+    bbox->centre = make_shared<Vector2>(c);
+}
+
+void SFAsset::GoSouthAlienBoss() {
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, -0.5f);
+    bbox->centre.reset();
+    bbox->centre = make_shared<Vector2>(c);
+  }
+
+
+void SFAsset::GoSouthCoin() {
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, -0.4f);
+    bbox->centre.reset();
+    bbox->centre = make_shared<Vector2>(c);
+  }
 
 bool SFAsset::CollidesWith(shared_ptr<SFAsset> other) {
   return bbox->CollidesWith(other->bbox);
@@ -135,7 +196,10 @@ bool SFAsset::IsAlive() {
 }
 
 void SFAsset::HandleCollision() {
-  if(SFASSET_PROJECTILE == type || SFASSET_ALIEN == type) {
+  if(SFASSET_PROJECTILE == type || SFASSET_ALIEN == type || SFASSET_WALL == type) {
     SetNotAlive();
   }
 }
+
+
+  

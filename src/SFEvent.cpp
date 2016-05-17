@@ -1,5 +1,6 @@
 #include "SFEvent.h"
 
+
 /**
  * Effectively wraps an SDL_Event in our custom event type.
  */
@@ -13,11 +14,17 @@ SFEvent::SFEvent(const SDL_Event & event) {
     break;
   case SDL_KEYDOWN:
     switch (event.key.keysym.sym) {
-    case SDLK_LEFT:
+    case SDLK_a:
       code = SFEVENT_PLAYER_LEFT;
       break;
-    case SDLK_RIGHT:
+    case SDLK_d:
       code = SFEVENT_PLAYER_RIGHT;
+      break;
+    case SDLK_w:
+      code = SFEVENT_PLAYER_UP;
+      break;
+    case SDLK_s:
+      code = SFEVENT_PLAYER_DOWN;
       break;
     case SDLK_SPACE:
       code = SFEVENT_FIRE;
