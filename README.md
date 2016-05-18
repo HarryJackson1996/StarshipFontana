@@ -41,10 +41,10 @@ Steps to compile my game:
 1) The easiest way to compile is to use a command-line
 
  in the Terminal.
-2)$ g++ -c -std=c++11 src/*.cpp
+2)$ g++ -c -std=c++11 src/*.cpp.
 3)
-$ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image
-4)./StarshipFontana
+$ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image.
+4)./StarshipFontana.
 
 
 
