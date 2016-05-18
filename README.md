@@ -17,7 +17,7 @@ You will have to have the SDL development libraries installed on
 your system.  The easiest way to compile is to use a command-line
 
 ```bash
-$ $ g++ -c -std=c++11 src/*.cpp
+$ g++ -c -std=c++11 src/*.cpp
 $ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image
 ```
 
