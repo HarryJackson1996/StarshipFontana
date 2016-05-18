@@ -50,5 +50,6 @@ private:
   int counter;
   int alienCounter;
   int health1;
+  int print1;
 };
 #endif

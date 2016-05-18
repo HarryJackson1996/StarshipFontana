@@ -149,7 +149,7 @@ void SFAsset::GoNorth() {
 }
 
 void SFAsset::GoNorthCoin() {
-  Vector2 c = *(bbox->centre) + Vector2(0.0f, 0.75f);
+  Vector2 c = *(bbox->centre) + Vector2(0.0f, 0.5f);
   bbox->centre.reset();
   bbox->centre = make_shared<Vector2>(c);
 }
