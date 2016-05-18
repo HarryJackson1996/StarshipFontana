@@ -17,34 +17,30 @@ You will have to have the SDL development libraries installed on
 your system.  The easiest way to compile is to use a command-line
 
 ```bash
-$ g++ -c -std=c++11 src/*.cpp
-$ g++ -o starship *.o -lSDL2 -lSDL2_image
+$ $ g++ -c -std=c++11 src/*.cpp
+$ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image.
 ```
 
 which will produce an executable file called "starship" in the
 top-level directory.  To execute this file do the following
 
-`$ ./starship`
+`$ /StarshipFontana.`
  
 from the top-level directory.  The game will expect to find the
 `assets` directory under its current working directory.
 
 ## Credits ##
-The sprites in this game come directly from 
-[SpriteLib](http://www.widgetworx.com/widgetworx/portfolio/spritelib.html) and are used
+The sprites in this game were created by me however the site I used was 
+[Piskel](http://www.piskelapp.com/) and are used
 under the terms of the [CPL 1.0](http://opensource.org/licenses/cpl1.0.php).
 # StarshipFontana1
 # StarshipFontana1
 
-Steps to compile my game:
 
-1) The easiest way to compile is to use a command-line
 
- in the Terminal.
-2)$ g++ -c -std=c++11 src/*.cpp.
-3)
-$ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image.
-4)./StarshipFontana.
+
+
+
 
 
 
