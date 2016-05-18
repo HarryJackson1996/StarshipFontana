@@ -1,4 +1,4 @@
-# Starship Fontana #
+﻿# Starship Fontana #
 
 This is an example C++ application using the SDL library.
 It tries to be as nicely C++11 as possible but do keep in
@@ -33,3 +33,20 @@ from the top-level directory.  The game will expect to find the
 The sprites in this game come directly from 
 [SpriteLib](http://www.widgetworx.com/widgetworx/portfolio/spritelib.html) and are used
 under the terms of the [CPL 1.0](http://opensource.org/licenses/cpl1.0.php).
+# StarshipFontana1
+# StarshipFontana1
+
+Steps to compile my game:
+
+1) The easiest way to compile is to use a command-line
+
+ in the Terminal.
+2)$ g++ -c -std=c++11 src/*.cpp
+3)
+$ g++ -o StarshipFontana *.o -lSDL2 -lSDL2_image
+4)./StarshipFontana
+
+
+
+
+
